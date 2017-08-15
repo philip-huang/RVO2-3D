@@ -27,6 +27,6 @@ print('Running simulation')
 for step in range(20):
     sim.doStep()
 
-    positions = ['(%5.3f, %5.3f)' % sim.getAgentPosition(agent_no)
+    positions = ['(%5.3f, %5.3f, %5.3f)' % sim.getAgentPosition(agent_no)
                  for agent_no in (a0, a1, a2, a3)]
     print('step=%2i  t=%.3f  %s' % (step, sim.getGlobalTime(), '  '.join(positions)))

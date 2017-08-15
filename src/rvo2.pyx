@@ -123,17 +123,17 @@ cdef class PyRVOSimulator:
         return plane.point.x(), plane.point.y(), plane.point.z(), plane.normal.x(), plane.normal.y(),plane.normal.z()
     def getAgentPosition(self, size_t agent_no):
         cdef Vector3 pos = self.thisptr.getAgentPosition(agent_no)
-        return pos.x(), pos.y()
+        return pos.x(), pos.y(), pos.z()
     def getAgentPrefVelocity(self, size_t agent_no):
         cdef Vector3 velocity = self.thisptr.getAgentPrefVelocity(agent_no)
-        return velocity.x(), velocity.y()
+        return velocity.x(), velocity.y(), velocity.z()
     def getAgentRadius(self, size_t agent_no):
         return self.thisptr.getAgentRadius(agent_no)
     def getAgentTimeHorizon(self, size_t agent_no):
         return self.thisptr.getAgentTimeHorizon(agent_no) 
     def getAgentVelocity(self, size_t agent_no):
         cdef Vector3 velocity = self.thisptr.getAgentVelocity(agent_no)
-        return velocity.x(), velocity.y()
+        return velocity.x(), velocity.y(), velocity.z()
     def getGlobalTime(self):
         return self.thisptr.getGlobalTime()
     def getNumAgents(self):
